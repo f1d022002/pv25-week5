@@ -107,6 +107,11 @@ class FormValidationApp(QWidget):
             self.show_warning('Dekk?')
             return
 
+        # kondisi umur
+        if int(age) < 18:
+            self.show_warning('Minimal 18 yahhhh.')
+            return
+
         # Validate no hp
         if len(phone) != 12:
             self.show_warning('Janagn Di isi 13 Digit Dek.')
@@ -125,11 +130,6 @@ class FormValidationApp(QWidget):
         # Validate education
         if education == "Select Education Level":
             self.show_warning('PIlih, jn gk di pilih')
-            return
-
-     # kondisi umur
-        if int(age) < 18:
-            self.show_warning('Minimal 18 yahhhh.')
             return
 
         self.show_success('Kelassss!!!!!!')
